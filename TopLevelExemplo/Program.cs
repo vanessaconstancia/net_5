@@ -18,5 +18,17 @@ void FuncaoLocal()
 }
 
 //Instanciando uma classe e obtendo uma propriedade
-var teste = new ClasseTeste();
-Console.WriteLine(teste.Nome);
+var teste = new ClasseComum();
+Console.WriteLine(teste.Propriedade);
+
+var teste1 = new ClasseTopLevel();
+Console.WriteLine(teste1.Propriedade);
+
+var teste2 = new ClasseSemNamespace();
+Console.WriteLine(teste2.Propriedade);
+ 
+class ClasseTopLevel
+{
+public string Propriedade { get => "Classe Top level"; }
+
+ }
