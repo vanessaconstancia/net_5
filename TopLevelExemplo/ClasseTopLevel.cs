@@ -1,4 +1,3 @@
-
 //System.Console.WriteLine("Erro");
 public class ClasseSemNamespace
 {

@@ -7,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace parametrosStartup
+namespace TesteSwagger2
 {
-      public class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
@@ -20,8 +20,7 @@ namespace parametrosStartup
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    // webBuilder.UseStartup<Startup>();
-                  webBuilder.UseStartup(ContextBoundObject=> new Startup(ContextBoundObject.Configuration, args));
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

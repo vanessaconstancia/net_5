@@ -15,7 +15,8 @@ namespace MvcExemplo
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            Configuration = configuration; 
+            //comentario
         }
 
         public IConfiguration Configuration { get; }
