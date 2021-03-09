@@ -33,8 +33,23 @@ namespace TesteListas
                                c1.codigo = clss2 != null ? clss2.codigo : "";
                              });
 
+         Console.WriteLine("Foreach");
          classe1.ForEach(teste => Console.WriteLine($"cc1: {teste.cci}  valor: {teste.valor} codigo: {teste.codigo}"));
 
+        List<classe3> testeJoin = (from c1 in classe1
+                        join c2 in classe2  
+                            on c1.cci equals c2.cci
+                            select new classe3()
+                            {
+                                cci = c1.cci,
+                                valor = c1.valor,
+                                codigo = c2.codigo
+                            }).ToList();
+        Console.WriteLine("Join");
+        foreach(var item in testeJoin)
+        {
+            Console.WriteLine($"cci: {item.cci} valor:{item.valor} codigo: {item.codigo}");
+        }
 
 
         }
@@ -52,5 +67,13 @@ namespace TesteListas
     {
         public int cci{get;set;}
         public string codigo{get;set;}
+    }
+
+        public class classe3
+    {
+        public int cci{get;set;}
+        public int valor {get;set;}
+        public string codigo{get;set;}
+
     }
 }
